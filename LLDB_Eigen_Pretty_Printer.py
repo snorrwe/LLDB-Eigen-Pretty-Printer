@@ -7,6 +7,18 @@ def __lldb_init_module (debugger, dict):
     debugger.HandleCommand("type summary add -x \"^Eigen::Matrix<.*?>$\" -F\
                            LLDB_Eigen_Pretty_Printer.eigen_matrix_print -p -r\
                           -w Eigen")
+    debugger.HandleCommand("type summary add -x \"^Eigen::MatrixX$\" -F\
+                           LLDB_Eigen_Pretty_Printer.eigen_matrix_print -p -r\
+                          -w Eigen")
+    debugger.HandleCommand("type summary add -x \"^dyno::MatX$\" -F\
+                           LLDB_Eigen_Pretty_Printer.eigen_matrix_print -p -r\
+                          -w Eigen")
+    debugger.HandleCommand("type summary add -x \"^dyno::VecX$\" -F\
+                           LLDB_Eigen_Pretty_Printer.eigen_matrix_print -p -r\
+                          -w Eigen")
+    debugger.HandleCommand("type summary add -x \"^Eigen::VectorX$\" -F\
+                           LLDB_Eigen_Pretty_Printer.eigen_matrix_print -p -r\
+                          -w Eigen")
     debugger.HandleCommand("type summary add -x \"^Eigen::Array<.*?>$\" -F\
                            LLDB_Eigen_Pretty_Printer.eigen_array_print -p -r\
                           -w Eigen")
